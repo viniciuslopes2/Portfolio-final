@@ -1,0 +1,16 @@
+[
+  {
+    "id": "c1",
+    "titulo": "Certificado FGV SCRUM",
+    "descricao": "Certificado da FGV com a introdução ao SCRUM.",
+    "imagem": "images/certificado_fgv_SCRUM.png",
+    "credencial": "assets/14473008_certificado_Fgv.pdf"
+  },
+  {
+    "id": "c2",
+    "titulo": "Certificado Escola de Inovadores INOVA CPS",
+    "descricao": "Certificado da Escola de Inovadores pela INOVA CPS em que o curso é direcionado ao empreendedorismo.",
+    "imagem": "images/certificado_escoladeINOVADORES_INOVACPS.png",
+    "credencial": "assets/CERTIFICADO - 2025-2 - CERTIFICADO_-_2025-2.pdf"
+  }
+]

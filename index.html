@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio de Vinícius Silva Lopes — Desenvolvedor Full-Stack. Projetos, certificados e formação." />
+    <title>Portfólio | Vinícius Silva Lopes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+             <div class="logo">
+                <a href="#">Vinícius S. Lopes</a>
+             </div>
+             <nav class="main-nav" id="main-nav">
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#certificados">Certificados</a>
+                <a href="#contato">Contato</a>
+             </nav>
+             <div class="menu-hamburguer">
+                 <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                     <svg class="icon-menu" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+             </div>
+        </div>
+    </header>
+    <main>
+        <section id="apresentacao" class="section-apresentacao">
+            <div class="apresentacao-container">
+                <img src="images/viniciusFoto2.jpeg" alt="Foto de Vinícius Silva Lopes" class="foto-perfil" onerror="this.src='https://ui-avatars.com/api/?name=Vinicius+Lopes&background=2563eb&color=fff&size=200'" />
+                <div class="texto-header">
+                    <span id="mensagem-saudacao"></span>
+                    <h1>Vinícius Silva Lopes</h1>
+                    <p>Desenvolvedor Full-Stack</p>
+                    <p class="mini-bio">
+                        Sou apaixonado pela tecnologia desde sempre e eu estou com visão no futuro da tecnologia, quero apreciar, aprender e conhecer o mundo digital e como ele funciona. Busco sempre ter novas ferramentas para estudar.
+                    </p>
+                    <a href="assets/Currículo Vinícius Silva Lopes.pdf" class="button-cv" download="Curriculo-Vinicius-Lopes.pdf">
+                        Baixar Currículo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="section-sobre">
+            <div class="container">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="sobre-flex-container">
+                    <div class="flex-box">
+                        <h3 class="flex-box-title">Formação Acadêmica</h3>
+                        <div id="lista-formacao"></div>
+                    </div>
+                    <div class="flex-box">
+                        <h3 class="flex-box-title">Experiências de Trabalho</h3>
+                        <div id="lista-experiencias"></div>
+                    </div>
+                    <div class="flex-box flex-box-full">
+                        <h3 class="flex-box-title">Cursos Complementares</h3>
+                        <ul id="lista-cursos" class="lista-cursos"></ul>
+                    </div>
+                </div>
+
+                <div class="habilidades-container">
+                    <h3 class="habilidades-titulo">Hard Skills (Técnicas)</h3>
+                    <div id="hard-skills-grid" class="habilidades-grid"></div>
+
+                    <h3 class="habilidades-titulo habilidades-titulo-spaced">Soft Skills (Interpessoais)</h3>
+                    <div id="soft-skills-grid" class="habilidades-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="section-projetos">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Meus Projetos</h2>
+                    <p class="section-subtitle">Uma seleção dos meus trabalhos e contribuições recentes.</p>
+                </div>
+
+                <div class="filtros-projetos" id="filtros-projetos">
+                    <button class="btn-filtro ativo" data-categoria="todos">Todos os Projetos</button>
+                    <button class="btn-filtro" data-categoria="web">Front-End Web</button>
+                    <button class="btn-filtro" data-categoria="app">Aplicativos</button>
+                    <button class="btn-filtro" data-categoria="dados">API / Dados</button>
+                </div>
+
+                <div id="projetos-grid" class="projetos-grid"></div>
+            </div>
+        </section>
+
+        <section id="certificados" class="section-certificados">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Meus Certificados</h2>
+                    <p class="section-subtitle">Minhas conquistas e qualificações recentes.</p>
+                </div>
+                <div id="certificados-grid" class="projetos-grid"></div>
+            </div>
+        </section>
+
+        <section id="contato" class="section-contato">
+            <div class="container text-center">
+                <h2 class="section-title">Contato</h2>
+                <p class="section-subtitle">Entre em contato comigo por e-mail ou através das minhas redes sociais.</p>
+                <div class="contato-links">
+                    <a href="mailto:silvalopesvinicius478@gmail.com" class="contato-link-item">
+                        <span>silvalopesvinicius478@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vinícius-silva-lopes-976217296/" target="_blank" rel="noopener noreferrer" class="contato-link-item">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/viniciuslopes2" target="_blank" rel="noopener noreferrer" class="contato-link-item">
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; <span id="footer-ano"></span> Vinícius Silva Lopes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="novo.css">
+</head>
+<body class="admin-body">
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html">← Voltar ao site</a></div>
+            <nav class="admin-nav" id="admin-tabs">
+                <button class="admin-tab ativo" data-tab="projetos">Projetos</button>
+                <button class="admin-tab" data-tab="certificados">Certificados</button>
+                <button class="admin-tab" data-tab="experiencias">Experiências</button>
+                <button class="admin-tab" data-tab="formacao">Formação</button>
+                <button class="admin-tab" data-tab="cursos">Cursos</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-main container">
+        <div id="toast" class="toast" role="status"></div>
+
+        <section id="tab-projetos" class="admin-section ativo">
+            <h2 class="section-title">CRUD Projetos</h2>
+
+            <form id="form-projetos" class="admin-form" enctype="multipart/form-data">
+                <input type="hidden" name="id">
+                <div class="form-row">
+                    <label>Título<input name="titulo" required></label>
+                    <label>Categoria
+                        <select name="categoria" required>
+                            <option value="web">Front-End Web</option>
+                            <option value="app">Aplicativos</option>
+                            <option value="dados">API / Dados</option>
+                        </select>
+                    </label>
+                </div>
+                <label>Descrição<textarea name="descricao" rows="3" required></textarea></label>
+                <label>Link do projeto<input name="link" type="url" placeholder="https://github.com/..."></label>
+                <div class="form-row">
+                    <label>Imagem (upload)
+                        <input name="imagemFile" type="file" accept="image/*">
+                    </label>
+                    <label>Imagem atual
+                        <input name="imagem" type="text" placeholder="/uploads/... ou /images/..." readonly>
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="button">Salvar</button>
+                    <button type="button" class="button button-secondary" data-action="reset">Limpar</button>
+                </div>
+            </form>
+
+            <div id="lista-projetos" class="admin-list"></div>
+        </section>
+
+        <section id="tab-certificados" class="admin-section">
+            <h2 class="section-title">CRUD Certificados</h2>
+
+            <form id="form-certificados" class="admin-form" enctype="multipart/form-data">
+                <input type="hidden" name="id">
+                <label>Título<input name="titulo" required></label>
+                <label>Descrição<textarea name="descricao" rows="3" required></textarea></label>
+                <div class="form-row">
+                    <label>Imagem (upload)<input name="imagemFile" type="file" accept="image/*"></label>
+                    <label>Imagem atual<input name="imagem" type="text" readonly></label>
+                </div>
+                <label>Link da credencial (PDF/URL)<input name="credencial" type="text" placeholder="/assets/... ou https://..."></label>
+                <div class="form-actions">
+                    <button type="submit" class="button">Salvar</button>
+                    <button type="button" class="button button-secondary" data-action="reset">Limpar</button>
+                </div>
+            </form>
+
+            <div id="lista-certificados" class="admin-list"></div>
+        </section>
+
+        <section id="tab-experiencias" class="admin-section">
+            <h2 class="section-title">CRUD Experiências</h2>
+
+            <form id="form-experiencias" class="admin-form">
+                <input type="hidden" name="id">
+                <div class="form-row">
+                    <label>Empresa<input name="empresa" required></label>
+                    <label>Cargo<input name="cargo"></label>
+                </div>
+                <label>Descrição<textarea name="descricao" rows="3"></textarea></label>
+                <div class="form-actions">
+                    <button type="submit" class="button">Salvar</button>
+                    <button type="button" class="button button-secondary" data-action="reset">Limpar</button>
+                </div>
+            </form>
+
+            <div id="lista-experiencias" class="admin-list"></div>
+        </section>
+
+        <section id="tab-formacao" class="admin-section">
+            <h2 class="section-title">CRUD Formação</h2>
+
+            <form id="form-formacao" class="admin-form">
+                <input type="hidden" name="id">
+                <div class="form-row">
+                    <label>Instituição<input name="instituicao" required></label>
+                    <label>Status
+                        <select name="status">
+                            <option value="Cursando">Cursando</option>
+                            <option value="Concluído">Concluído</option>
+                            <option value="Trancado">Trancado</option>
+                        </select>
+                    </label>
+                </div>
+                <label>Curso<input name="curso" required></label>
+                <label>Descrição (opcional)<textarea name="descricao" rows="2"></textarea></label>
+                <div class="form-actions">
+                    <button type="submit" class="button">Salvar</button>
+                    <button type="button" class="button button-secondary" data-action="reset">Limpar</button>
+                </div>
+            </form>
+
+            <div id="lista-formacao" class="admin-list"></div>
+        </section>
+
+        <section id="tab-cursos" class="admin-section">
+            <h2 class="section-title">CRUD Cursos Complementares</h2>
+
+            <form id="form-cursos" class="admin-form">
+                <input type="hidden" name="id">
+                <label>Nome do curso<input name="nome" required></label>
+                <div class="form-row">
+                    <label>Instituição<input name="instituicao" required></label>
+                    <label>Carga<input name="carga" placeholder="40h"></label>
+                    <label>Ano<input name="ano" type="number" min="2000" max="2100"></label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="button">Salvar</button>
+                    <button type="button" class="button button-secondary" data-action="reset">Limpar</button>
+                </div>
+            </form>
+
+            <div id="lista-cursos-admin" class="admin-list"></div>
+        </section>
+    </main>
+
+    <script src="novo.js"></script>
+</body>
+</html>

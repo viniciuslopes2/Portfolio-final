@@ -1,0 +1,23 @@
+[
+  {
+    "id": "cu1",
+    "nome": "Curso Introdutório de SCRUM",
+    "instituicao": "FGV",
+    "carga": "10h",
+    "ano": "2025"
+  },
+  {
+    "id": "cu2",
+    "nome": "Escola de Inovadores (Empreendedorismo)",
+    "instituicao": "INOVA CPS",
+    "carga": "40h",
+    "ano": "2025"
+  },
+  {
+    "id": "cu3",
+    "nome": "Introdução à Lógica de Programação",
+    "instituicao": "UNIVAP",
+    "carga": "20h",
+    "ano": "2022"
+  }
+]
