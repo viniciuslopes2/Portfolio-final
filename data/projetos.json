@@ -3,7 +3,7 @@
     "id": "p4",
     "titulo": "Site de Pizzaria fictícia",
     "descricao": "Colaboração no GitHub para estilizar uma página de restaurante. Aprendizado em branchs e CSS3/HTML5.",
-    "imagem": "/images/sitedepizzaimagem.png",
+    "imagem": "images/sitedepizzaimagem.png",
     "link": "https://github.com/isabellymarinho20/pizzaria-",
     "categoria": "web"
   },
@@ -11,7 +11,7 @@
     "id": "p5",
     "titulo": "TCC - Rastreamento (App)",
     "descricao": "Contribuição em desenvolvimento WEB e Mobile com JS, TS, React-Native, AWS e Node. Aplicativo de rastreamento de doações.",
-    "imagem": "/images/tccappem.png",
+    "imagem": "images/tccappem.png",
     "link": "https://github.com/rafaelafsinfo/tcc-app",
     "categoria": "app"
   },
@@ -19,7 +19,7 @@
     "id": "p6",
     "titulo": "Projeto API - Fatec 1º Sem",
     "descricao": "Desenvolvimento de uma análise de gráficos da cidade de SJC (faixa etária, densidade demográfica, etc).",
-    "imagem": "/images/sitedeapihome.png",
+    "imagem": "images/sitedeapihome.png",
     "link": "https://github.com/FATCK06/ProjectAPI_FirstSemester",
     "categoria": "dados"
   }

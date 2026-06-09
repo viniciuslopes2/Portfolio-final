@@ -37,6 +37,13 @@ function esc(str) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+// remove a barra inicial de caminhos locais para funcionar em subdiretórios (GitHub Pages)
+function path(str) {
+  if (!str) return '';
+  if (str.startsWith('http') || str.startsWith('data:')) return str;
+  return str.replace(/^\/+/, '');
+}
+
 async function buscar(entidade) {
   const raw = localStorage.getItem('portfolio_' + entidade);
   if (raw) {
@@ -66,7 +73,7 @@ function renderProjetos(filtro = 'todos') {
 
   container.innerHTML = lista.map(p => `
     <div class="projeto-card">
-      <img src="${esc(p.imagem || fallback)}" alt="${esc(p.titulo)}" class="projeto-imagem"
+      <img src="${esc(path(p.imagem) || fallback)}" alt="${esc(p.titulo)}" class="projeto-imagem"
            onerror="this.src='${fallback}'">
       <div class="projeto-conteudo">
         <h3 class="projeto-titulo">${esc(p.titulo)}</h3>
@@ -90,12 +97,12 @@ function renderCertificados(lista) {
 
   container.innerHTML = lista.map(c => `
     <div class="projeto-card">
-      <img src="${esc(c.imagem || fallback)}" alt="${esc(c.titulo)}" class="projeto-imagem"
+      <img src="${esc(path(c.imagem) || fallback)}" alt="${esc(c.titulo)}" class="projeto-imagem"
            onerror="this.src='${fallback}'">
       <div class="projeto-conteudo">
         <h3 class="projeto-titulo">${esc(c.titulo)}</h3>
         <p class="projeto-descricao">${esc(c.descricao)}</p>
-        ${c.credencial ? `<a href="${esc(c.credencial)}" target="_blank" rel="noopener noreferrer" class="button">Ver Credencial</a>` : ''}
+        ${c.credencial ? `<a href="${esc(path(c.credencial))}" target="_blank" rel="noopener noreferrer" class="button">Ver Credencial</a>` : ''}
       </div>
     </div>
   `).join('') || '<p class="text-muted">Nenhum certificado cadastrado.</p>';

@@ -112,6 +112,12 @@ function esc(str) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+function path(str) {
+  if (!str) return '';
+  if (str.startsWith('http') || str.startsWith('data:')) return str;
+  return str.replace(/^\/+/, '');
+}
+
 function toast(mensagem, tipo = 'success') {
   const el = document.getElementById('toast');
   if (!el) return;
@@ -137,7 +143,7 @@ async function carregarLista(entidade) {
     const { thumb, titulo, meta } = config.renderItem(item);
     return `
       <div class="admin-item">
-        ${thumb ? `<img src="${esc(thumb)}" class="admin-item-thumb" alt="" onerror="this.style.display='none'">` : ''}
+        ${thumb ? `<img src="${esc(path(thumb))}" class="admin-item-thumb" alt="" onerror="this.style.display='none'">` : ''}
         <div class="admin-item-body">
           <h3 class="admin-item-title">${esc(titulo)}</h3>
           <p class="admin-item-meta">${meta || ''}</p>
