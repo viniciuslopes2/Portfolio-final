@@ -1,4 +1,4 @@
-# Portfólio — Vinícius Silva Lopes
+# Portfólio /- Vinícius Silva Lopes
 
 Meu portfólio pessoal. Feito com HTML, CSS e JavaScript puro, sem frameworks. Os dados ficam no `localStorage` do navegador, com os valores iniciais vindo dos arquivos em `data/`.
 
